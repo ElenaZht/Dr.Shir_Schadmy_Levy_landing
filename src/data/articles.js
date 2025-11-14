@@ -47,7 +47,7 @@ export const articles = [
     publishDate: "2024-03-15",
     readTime: "8 דקות קריאה",
     tags: ["אולטרסאונד", "פאשיה", "מחקר", "אבחון", "מניפולציה פאשיאלית"],
-    pdfUrl: "/pdfs/full fascia shir schadmy מאמר.pdf"
+    pdfUrl: "/articles/FullFascia.pdf"
   },
   {
     id: 2,
@@ -123,6 +123,6 @@ TMD נובעים ממספר גורמים תורמים, בעיקר גורמי ל�
     publishDate: "2024-02-20",
     readTime: "12 דקות קריאה",
     tags: ["TMD", "מפרק הלסת", "כאב אורו-פציאלי", "מניפולציה פאשיאלית", "פיזיותרפיה"],
-    pdfUrl: "/pdfs/Tmd Review final[1].docx2.pdf"
+    pdfUrl: "/articles/TmdReviewFinal.pdf"
   }
 ];
