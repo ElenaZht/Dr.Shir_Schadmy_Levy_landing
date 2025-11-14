@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { articles } from '../data/articles';
+import { Helmet } from 'react-helmet'; // Add this import
 
 function ArticleDetail() {
 
@@ -51,6 +52,15 @@ function ArticleDetail() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8" dir="rtl">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>{article.title}</title>
+        <meta name="description" content={article.excerpt || article.title} />
+        {article.tags && (
+          <meta name="keywords" content={article.tags.join(', ')} />
+        )}
+      </Helmet>
+
       {/* Go Back Button */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-8">
