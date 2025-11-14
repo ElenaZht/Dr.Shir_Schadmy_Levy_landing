@@ -11,10 +11,10 @@ function AppointmentSection() {
           </p>
         </div>
         
-        {/* Three Cards in One Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  {/* Two Cards Centered */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center w-full max-w-4xl mx-auto">
           {/* Contact & Booking Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 text-center flex flex-col justify-center">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 text-center flex flex-col justify-center h-full min-h-[420px]">
             <div className="mb-4">
               <svg className="w-12 h-12 mx-auto text-white mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -61,7 +61,7 @@ function AppointmentSection() {
           </div>
 
           {/* Tel Aviv Clinic Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 h-full min-h-[420px] flex flex-col justify-center">
             {/* Map Section */}
             <div className="p-4">
               <div className="w-full h-48 rounded-lg overflow-hidden border border-white/20 mb-4">
@@ -76,21 +76,20 @@ function AppointmentSection() {
                   title="מרפאת תל אביב - קינג ג'ורג' 33"
                 ></iframe>
               </div>
-              <div className="flex justify-center mb-2">
-                <a
-                  href="https://waze.com/ul?ll=32.0858,34.7743&navigate=yes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300"
-                >
-                  <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
-                  פתח ב-Waze
-                </a>
-              </div>
-              
               {/* Info Section */}
               <div className="text-center">
-                <h3 className="text-xl font-bold mb-3 text-white">מרפאת תל אביב</h3>
+                <h3 className="text-xl font-bold mb-3 text-white flex flex-col items-center justify-center gap-2">
+                  <span>מרפאת בית מרפא תל אביב</span>
+                  <a
+                    href="https://waze.com/ul?ll=32.0858,34.7743&navigate=yes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300 mt-1"
+                  >
+                    <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
+                    פתח ב-Waze
+                  </a>
+                </h3>
                 <div className="space-y-2 text-xl">
                   <p className="font-semibold text-white">בית מרפא</p>
                   <p className="text-blue-100">רחוב קינג ג'ורג' 33</p>
@@ -99,46 +98,7 @@ function AppointmentSection() {
               </div>
             </div>
           </div>
-
-          {/* Ramat Gan Clinic Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-            {/* Map Section */}
-            <div className="p-4">
-              <div className="w-full h-48 rounded-lg overflow-hidden border border-white/20 mb-4">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8!2d34.8219!3d32.0897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4ca4!2sRuth%20St%2013%2C%20Ramat%20Gan%2C%20Israel!5e0!3m2!1sen!2sus!4v1623456789000!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="מרפאת רמת גן - רות 13"
-                ></iframe>
-              </div>
-              <div className="flex justify-center mb-2">
-                <a
-                  href="https://waze.com/ul?ll=32.0897,34.8219&navigate=yes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300"
-                >
-                  <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
-                  פתח ב-Waze
-                </a>
-              </div>
-              
-              {/* Info Section */}
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-3 text-white">מרפאת רמת גן</h3>
-                <div className="space-y-2 text-xl">
-                  <p className="text-blue-100">רחוב רות 13</p>
-                  <p className="text-blue-100">רמת גן</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
       </div>
     </section>
   )
