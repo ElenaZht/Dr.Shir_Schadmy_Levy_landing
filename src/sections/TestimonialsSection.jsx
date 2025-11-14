@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import image6 from '../assets/photos/image6.jpg'
 
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -20,7 +21,7 @@ function TestimonialsSection() {
       id: 3,
       text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. שיר מקצועית ואכפתית, הטיפול עזר לי מאוד עם כאבי הגב הכרוניים.",
       name: "מרים אברהם",
-      title: "מטופלת"
+      title: " Mofflet"
     },
     {
       id: 4,
@@ -32,7 +33,7 @@ function TestimonialsSection() {
       id: 5,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. התוצאות מדהימות! חזרתי לפעילות ספורטיבית בזכות הטיפול המדויק.",
       name: "רחל גולדברג",
-      title: "מטופלת"
+      title: " Mofflet"
     }
   ]
 
@@ -45,45 +46,56 @@ function TestimonialsSection() {
     return () => clearInterval(interval)
   }, [testimonials.length])
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index)
-  }
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    )
-  }
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+  const goToSlide = (index) => setCurrentIndex(index)
+  const goToPrevious = () => setCurrentIndex((prevIndex) => prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1)
+  const goToNext = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50 scroll-mt-20">
-      <div className="w-full">
+    <section
+      id="testimonials"
+      className="relative py-20 bg-gray-50 scroll-mt-20 overflow-hidden"
+      style={{
+        backgroundImage: `url(${image6})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed', // <-- this makes the image stay fixed while overlay/content scroll
+        position: 'relative',
+        zIndex: 1,
+        overflow: 'hidden',
+      }}
+    >
+      {/* Teal overlay that scrolls with the content */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: 'rgba(13, 148, 136, 0.5)',
+        }}
+        aria-hidden="true"
+      />
+      <div className="w-full relative z-20">
         {/* Carousel Container */}
         <div className="relative w-full">
           {/* Testimonial Content */}
           <div className="text-center px-8 py-12 max-w-4xl mx-auto">
             {/* Testimonial Text */}
-            <p className="text-2xl md:text-xl text-gray-700 leading-relaxed mb-8 font-light italic">
+            <p className="text-2xl md:text-xl text-white leading-relaxed mb-8 font-light italic">
               "{testimonials[currentIndex].text}"
             </p>
             
             {/* Author Info */}
             <div className="mt-8">
-              <h4 className="text-xl font-semibold text-blue-700 mb-1">
+              <h4 className="text-xl font-semibold text-white mb-1">
                 {testimonials[currentIndex].name}
               </h4>
-              <p className="text-gray-500">{testimonials[currentIndex].title}</p>
+              <p className="text-white">{testimonials[currentIndex].title}</p>
             </div>
           </div>
 
           {/* Navigation Arrows */}
           <div
             onClick={goToPrevious}
-            className="absolute left-8 top-1/2 -translate-y-1/2 cursor-pointer text-blue-600 hover:text-blue-700 transition-colors duration-200 z-10 flex items-center justify-center"
+            className="absolute left-8 top-1/2 -translate-y-1/2 cursor-pointer text-blue-600 hover:text-blue-700 transition-colors duration-200 z-20 flex items-center justify-center"
             aria-label="Previous testimonial"
           >
             <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +105,7 @@ function TestimonialsSection() {
 
           <div
             onClick={goToNext}
-            className="absolute right-8 top-1/2 -translate-y-1/2 cursor-pointer text-blue-600 hover:text-blue-700 transition-colors duration-200 z-10 flex items-center justify-center"
+            className="absolute right-8 top-1/2 -translate-y-1/2 cursor-pointer text-blue-600 hover:text-blue-700 transition-colors duration-200 z-20 flex items-center justify-center"
             aria-label="Next testimonial"
           >
             <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">

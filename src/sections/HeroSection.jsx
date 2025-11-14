@@ -1,23 +1,38 @@
 function HeroSection() {
   return (
-    <section 
-      id="home" 
-      className="relative min-h-[70vh] flex items-center py-10 px-5 bg-contain bg-center bg-no-repeat"
+    <section
+      id="home"
+      className="relative min-h-[70vh] flex items-center py-10 px-5 bg-cover bg-center"
       style={{
-        backgroundColor: "#1e3a8a",
-        backgroundImage: "linear-gradient(135deg, #1e3a8a 0%, #06b6d4 100%)",
-        transform: "scaleX(-1)"
+        backgroundImage: `url('/src/assets/photos/טיפול בTMD וכאבי ראש.jpg')`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed', // <-- Add this line for parallax effect
+        position: 'relative',
+        zIndex: 1,
+        overflow: 'hidden',
       }}
     >
-      <div className="max-w-7xl mx-auto w-full flex justify-end" style={{ transform: "scaleX(-1)" }}>
-        <div className="text-right max-w-2xl z-10">
+      {/* Teal gradient overlay: decreased opacity on right side */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'linear-gradient(to right, rgba(13, 148, 136, 1) 0%, rgba(13, 148, 136, 0.85) 50%, rgba(13, 148, 136, 0.15) 100%)',
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto w-full flex justify-end relative z-10" style={{ direction: 'rtl' }}>
+        <div className="text-right max-w-2xl">
           <h1 className="text-6xl md:text-5xl sm:text-4xl text-white mb-6 font-bold">שיר שדמי לוי</h1>
           <p className="text-xl md:text-lg sm:text-base text-white mb-10 leading-relaxed">
-            התמחות קלינית בתחום רפואת שריר שלד וכאב כרוני מיועדת למתן מענה טיפולי ושיקומי לכאבים מיופציאלים (שריר-רקמת חיבור), מצבי כאב כרוני הנגרמים מתסמונות שונות, כולל תסמונות ספציפיות של מפרק הלסת, הפה והמערכת הקשורה לקומפלקס ראש-צוואר.
+            <b>התמחות קלינית ברפואת שריר־שלד וכאב כרוני</b> המתמקדת באבחון, טיפול ושיקום של <b>כאבים מיופציאליים ותסמונות כאב כרוני</b>, כולל קומפלקס ראש, פנים צוואר ולסת. <br />
+            מטפלת מוסמכת בשיטת Fascial Manipulation Method by Stecco ודיקור מערבי.
           </p>
           <div className="flex justify-start">
-            <a 
-              href="#specializations" 
+            <a
+              href="#specializations"
               className="bg-transparent text-white py-4 px-9 no-underline border-2 border-white rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-xl hover:bg-teal-400 hover:border-teal-400 md:w-full md:max-w-xs md:text-center"
               style={{
                 transition: 'all 0.3s ease'
