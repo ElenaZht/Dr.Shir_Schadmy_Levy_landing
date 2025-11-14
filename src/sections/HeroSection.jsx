@@ -1,10 +1,12 @@
+import image7 from '../assets/photos/image7.jpg';
+
 function HeroSection() {
   return (
     <section
       id="home"
       className="relative min-h-[70vh] flex items-center py-10 px-5 bg-cover bg-center"
       style={{
-        backgroundImage: `url('/src/assets/photos/טיפול בTMD וכאבי ראש.jpg')`,
+        backgroundImage: `url(${image7})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

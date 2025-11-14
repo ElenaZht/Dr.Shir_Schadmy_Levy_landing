@@ -1,6 +1,6 @@
+import wazeImage from  '../assets/waze.png'
+
 const Footer = () => {
-
-
 
   return (
     <footer id="contact" className="bg-slate-800 text-white py-10 px-5 mt-20" style={{backgroundColor: '#334155'}} dir="rtl">
@@ -23,14 +23,14 @@ const Footer = () => {
             <div className="text-lg font-bold text-teal-400 mb-2">כתובות המרפאות</div>
             <div className="text-teal-300 flex items-center gap-2">
               <a href="https://waze.com/ul?ll=32.0858,34.7743&navigate=yes" target="_blank" rel="noopener noreferrer">
-                <img src="/waze.png" alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
+                <img src={wazeImage} alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
               </a>
               מרפאת תל אביב:
             </div>
             <div className="text-gray-300">רחוב קינג ג'ורג' 33, תל אביב</div>
             <div className="text-teal-300 mt-2 flex items-center gap-2">
               <a href="https://waze.com/ul?ll=32.0897,34.8219&navigate=yes" target="_blank" rel="noopener noreferrer">
-                <img src="/waze.png" alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
+                <img src={wazeImage} alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
               </a>
               מרפאת רמת גן:
             </div>

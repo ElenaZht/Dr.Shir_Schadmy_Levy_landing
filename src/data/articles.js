@@ -1,8 +1,10 @@
+import image5 from  '../assets/photos/image5.jpg'
+import image7 from '../assets/photos/image7.jpg';
 export const articles = [
   {
     id: 1,
     title: "Ultrasound evaluation of deep fascia thickness: Reliability and association with clinically evaluated changes",
-    image: "/src/assets/photos/image5.jpg", // updated image path
+    image: image5, // updated image path
     excerpt: "מחקר פורץ דרך על הערכת עובי הפאשיה העמוקה באמצעות אולטרסאונד ואמינותה בקליניקה",
     content: `מחקר פורץ דרך על הערכת עובי הפאשיה העמוקה באמצעות אולטרסאונד ואמינותה בקליניקה
 רקע ומטרות המחקר
@@ -50,7 +52,7 @@ export const articles = [
   {
     id: 2,
     title: "הפרעות טמפורומנדיבולריות - פה ולסת (TMD)",
-    image: "/src/assets/photos/טיפול בTMD וכאבי ראש.jpg",
+    image: image7,
     excerpt: "סקירה מקיפה על הפרעות במפרק הלסת, אבחון מתקדם וגישות טיפוליות חדשניות",
     content: `
 הגדרה ומבוא

@@ -1,76 +1,11 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { diplomas } from '../data/diplomas'
+
 
 function DiplomaPage() {
   const { id } = useParams()
   const navigate = useNavigate()
-
-  // Diploma data - same as in DiplomasPage
-  const diplomas = [
-    {
-      id: 1,
-      title: 'Professional Certificate',
-      institution: 'Healthcare Institution',
-      previewImage: '/diplomas/design1.png',
-      fullImage: '/diplomas/design1.png'
-    },
-    {
-      id: 2,
-      title: 'Advanced Certification',
-      institution: 'Medical Academy',
-      previewImage: '/diplomas/design2.png',
-      fullImage: '/diplomas/design2.png'
-    },
-    {
-      id: 3,
-      title: 'Professional Qualification',
-      institution: 'Training Institute',
-      previewImage: '/diplomas/design3.png',
-      fullImage: '/diplomas/design3.png'
-    },
-    {
-      id: 4,
-      title: 'Specialized Training',
-      institution: 'Professional Academy',
-      previewImage: '/diplomas/design4.png',
-      fullImage: '/diplomas/design4.png'
-    },
-    {
-      id: 5,
-      title: 'Professional Development',
-      institution: 'Continuing Education Center',
-      previewImage: '/diplomas/design5.png',
-      fullImage: '/diplomas/design5.png'
-    },
-    {
-      id: 6,
-      title: 'BPT Advanced Certification',
-      institution: 'Therapy Institute',
-      previewImage: '/diplomas/design6.png',
-      fullImage: '/diplomas/design6.png'
-    },
-    {
-      id: 7,
-      title: 'Clinical Training Certificate',
-      institution: 'Medical Center',
-      previewImage: '/diplomas/certificate7.jpg',
-      fullImage: '/diplomas/certificate7.jpg'
-    },
-    {
-      id: 8,
-      title: 'Certification Document',
-      institution: 'Professional Board',
-      previewImage: '/diplomas/certificate8.jpg',
-      fullImage: '/diplomas/certificate8.jpg'
-    },
-    {
-      id: 9,
-      title: 'Therapeutic Certification',
-      institution: 'Health Sciences Institute',
-      previewImage: '/diplomas/certificate9.png',
-      fullImage: '/diplomas/certificate9.png'
-    }
-  ]
 
   const diploma = diplomas.find(d => d.id === parseInt(id))
   const currentIndex = diplomas.findIndex(d => d.id === parseInt(id))

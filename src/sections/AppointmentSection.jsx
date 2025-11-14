@@ -1,3 +1,5 @@
+import wazeImage from '../assets/waze.png'
+
 function AppointmentSection() {
   return (
     <section id="appointment" className="py-20 px-5 bg-gradient-to-br from-blue-600 to-blue-800 text-white scroll-mt-20">
@@ -86,7 +88,7 @@ function AppointmentSection() {
                     rel="noopener noreferrer"
                     className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300 mt-1"
                   >
-                    <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
+                    <img src={wazeImage} alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
                     פתח ב-Waze
                   </a>
                 </h3>
