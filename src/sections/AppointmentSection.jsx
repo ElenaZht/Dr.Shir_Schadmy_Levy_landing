@@ -76,6 +76,17 @@ function AppointmentSection() {
                   title="מרפאת תל אביב - קינג ג'ורג' 33"
                 ></iframe>
               </div>
+              <div className="flex justify-center mb-2">
+                <a
+                  href="https://waze.com/ul?ll=32.0858,34.7743&navigate=yes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300"
+                >
+                  <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
+                  פתח ב-Waze
+                </a>
+              </div>
               
               {/* Info Section */}
               <div className="text-center">
@@ -104,6 +115,17 @@ function AppointmentSection() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="מרפאת רמת גן - רות 13"
                 ></iframe>
+              </div>
+              <div className="flex justify-center mb-2">
+                <a
+                  href="https://waze.com/ul?ll=32.0897,34.8219&navigate=yes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition-colors duration-300"
+                >
+                  <img src="/waze.png" alt="Waze" className="w-6 h-6 ml-2" style={{display: 'inline'}} />
+                  פתח ב-Waze
+                </a>
               </div>
               
               {/* Info Section */}

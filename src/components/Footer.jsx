@@ -21,9 +21,19 @@ const Footer = () => {
           {/* Column 2: Address (center) */}
           <div className="flex flex-col justify-start items-start py-2 text-left md:pl-8">
             <div className="text-lg font-bold text-teal-400 mb-2">כתובות המרפאות</div>
-            <div className="text-teal-300">מרפאת תל אביב:</div>
+            <div className="text-teal-300 flex items-center gap-2">
+              <a href="https://waze.com/ul?ll=32.0858,34.7743&navigate=yes" target="_blank" rel="noopener noreferrer">
+                <img src="/waze.png" alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
+              </a>
+              מרפאת תל אביב:
+            </div>
             <div className="text-gray-300">רחוב קינג ג'ורג' 33, תל אביב</div>
-            <div className="text-teal-300 mt-2">מרפאת רמת גן:</div>
+            <div className="text-teal-300 mt-2 flex items-center gap-2">
+              <a href="https://waze.com/ul?ll=32.0897,34.8219&navigate=yes" target="_blank" rel="noopener noreferrer">
+                <img src="/waze.png" alt="Waze" className="w-6 h-6 hover:scale-110 transition-transform duration-200" style={{display: 'inline'}} />
+              </a>
+              מרפאת רמת גן:
+            </div>
             <div className="text-gray-300">רחוב רות 13, רמת גן</div>
           </div>
           {/* Column 3: Links (leftmost) */}
