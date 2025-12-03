@@ -4,24 +4,25 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[70vh] flex items-center py-10 px-5 bg-cover bg-center"
+      className="
+        relative min-h-[70vh] flex items-center py-10 px-5
+        bg-no-repeat bg-center bg-cover bg-fixed
+        overflow-hidden z-[1]
+      "
       style={{
         backgroundImage: `url(${image7})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed', // <-- Add this line for parallax effect
-        position: 'relative',
-        zIndex: 1,
-        overflow: 'hidden',
       }}
     >
-      {/* Teal gradient overlay: decreased opacity on right side */}
+      {/* Teal overlay: solid on mobile, gradient on sm+ */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 block sm:hidden bg-teal-600 opacity-100 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 z-0 hidden sm:block pointer-events-none"
         style={{
-          background: 'linear-gradient(to right, rgba(13, 148, 136, 1) 0%, rgba(13, 148, 136, 0.85) 50%, rgba(13, 148, 136, 0.15) 100%)',
-          pointerEvents: 'none',
+          background:
+            'linear-gradient(to right, rgba(13,148,136,1) 0%, rgba(13,148,136,0.85) 50%, rgba(13,148,136,0.15) 100%)',
         }}
         aria-hidden="true"
       />
@@ -35,20 +36,12 @@ function HeroSection() {
           <div className="flex justify-start">
             <a
               href="#specializations"
-              className="bg-transparent text-white py-4 px-9 no-underline border-2 border-white rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1 hover:shadow-xl hover:bg-teal-400 hover:border-teal-400 md:w-full md:max-w-xs md:text-center"
-              style={{
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#06b6d4';
-                e.target.style.borderColor = '#06b6d4';
-                e.target.style.color = '#ffffff';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.borderColor = '#ffffff';
-                e.target.style.color = '#ffffff';
-              }}
+              className="
+                bg-transparent text-white py-4 px-9 no-underline border-2 border-white rounded-full
+                font-semibold text-lg transition-all duration-300 shadow-lg
+                hover:-translate-y-1 hover:shadow-xl hover:bg-teal-400 hover:border-teal-400
+                md:w-full md:max-w-xs md:text-center
+              "
             >
               לפרטים נוספים
             </a>
