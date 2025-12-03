@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Search from './Search';
 
@@ -6,6 +6,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
   const location = useLocation();
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -97,6 +99,27 @@ const Navbar = () => {
     // If we're on homepage, let the default hash navigation work
   };
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 font-sans" dir="rtl">
       <div className="max-w-full mx-auto px-5 flex justify-between items-center h-20">
@@ -157,7 +180,11 @@ const Navbar = () => {
         <Search className="hidden lg:flex" />
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden flex flex-col cursor-pointer p-2 gap-1" onClick={toggleMenu}>
+        <div
+          className="lg:hidden flex flex-col cursor-pointer p-2 gap-1"
+          onClick={toggleMenu}
+          ref={toggleRef}
+        >
           <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-x-2 translate-y-2' : ''}`}></span>
           <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
           <span className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 origin-center ${isMenuOpen ? '-rotate-45 translate-x-2 -translate-y-2' : ''}`}></span>
@@ -165,10 +192,16 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96' : 'max-h-0'}`}>
+      <div
+        ref={menuRef}
+        className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96' : 'max-h-0'}`}
+      >
         {/* Mobile Search */}
         <div className="p-4 border-b border-gray-200">
-          <Search className="w-full" />
+          <Search 
+            className="w-full"
+            onSearchButtonClick={() => setIsMenuOpen(false)}
+          />
         </div>
         
         <ul className="list-none m-0 py-5">

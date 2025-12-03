@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Search = ({ className = '', initialValue = '', onSearch = null }) => {
+const Search = ({ className = '', initialValue = '', onSearch = null, onSearchButtonClick = null }) => {
   const [searchTerm, setSearchTerm] = useState(initialValue);
   const navigate = useNavigate();
 
@@ -57,7 +57,7 @@ const Search = ({ className = '', initialValue = '', onSearch = null }) => {
       
       const textNodes = [];
       let node;
-      while (node = walker.nextNode()) {
+      while (node == walker.nextNode()) {
         if (node.textContent.trim().length > 0) {
           textNodes.push(node);
         }
@@ -102,6 +102,9 @@ const Search = ({ className = '', initialValue = '', onSearch = null }) => {
       if (searchType === 'global') {
         // Navigate to search results page
         navigate(`/search?q=${encodeURIComponent(trimmedTerm)}`);
+        if (onSearchButtonClick && trimmedTerm.length > 0) {
+          onSearchButtonClick(trimmedTerm);
+        }
       } else if (onSearch) {
         // Call the provided search function for local search
         onSearch(trimmedTerm);
