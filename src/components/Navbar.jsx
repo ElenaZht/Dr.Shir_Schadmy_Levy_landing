@@ -19,7 +19,6 @@ const Navbar = () => {
     { name: 'זימון תור', href: '#appointment' },
     { name: 'תחומי התמחות', href: '#specializations' },
     { name: 'מאמרים', href: '#articles' },
-    { name: 'מכתבי תודה', href: '#testimonials' },
     { name: 'צור קשר', href: '#contact' }
   ];
 

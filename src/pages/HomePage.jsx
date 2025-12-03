@@ -3,7 +3,6 @@ import HeroSection from '../sections/HeroSection'
 import AboutSection from '../sections/AboutSection'
 import SpecializationsSection from '../sections/SpecializationsSection'
 import ArticlesSection from '../sections/ArticlesSection'
-import TestimonialsSection from '../sections/TestimonialsSection'
 import AppointmentSection from '../sections/AppointmentSection'
 
 
@@ -29,7 +28,6 @@ function HomePage() {
       <AppointmentSection />
       <SpecializationsSection />
       <ArticlesSection />
-      <TestimonialsSection />
     </>
   )
 }

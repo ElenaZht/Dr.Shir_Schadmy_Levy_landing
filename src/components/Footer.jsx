@@ -15,7 +15,6 @@ const Footer = () => {
               <li><a href="#appointment" className="text-teal-400 hover:underline">זימון תור</a></li>
               <li><a href="#specializations" className="text-teal-400 hover:underline">תחומי התמחות</a></li>
               <li><a href="#articles" className="text-teal-400 hover:underline">מאמרים</a></li>
-              <li><a href="#testimonials" className="text-teal-400 hover:underline">מכתבי תודה</a></li>
             </ul>
           </div>
           {/* Column 2: Address (center) */}
